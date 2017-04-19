@@ -9,6 +9,52 @@
   <!--Initialisation de bootstrap-->
   <link rel="stylesheet" href="css/bootstrap.min.css">
 
+  <!--CSS perso-->
+  <link rel="stylesheet" href="css/style.css">
+
+  <script type="text/javascript">
+    $(function () {
+
+        var filterList = {
+
+            init: function () {
+
+                // Plugin Mixitup, qui permet de filtrer les vignettes par catégorie
+                $('#portfoliolist').mixitup({
+                    targetSelector: '.portfolio',
+                    filterSelector: '.filter',
+                    effects: ['fade'],
+                    easing: 'snap',
+                    // call the hover effect
+                    onMixEnd: filterList.hoverEffect()
+                });
+
+            },
+
+            hoverEffect: function () {
+
+                // Fonction pour l'effet "hover"
+                $('#portfoliolist .portfolio').hover(
+                    function () {
+                        $(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
+                        $(this).find('img').stop().animate({top: -30}, 500, 'easeOutQuad');
+                    },
+                    function () {
+                        $(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
+                        $(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');
+                    }
+                );
+
+            }
+        };
+
+        // Lance les deux fonctions "hover" et "filtre"
+        filterList.init();
+
+
+    });
+  </script>
+
 
 </head>
 <body data-spy="scroll" data-target=".navbar">
@@ -82,10 +128,164 @@
     </section>
 
     <section class="jumbotron" id="techno">
-    <div class="container">
+      <div class="container">
         <h1 class="well">Les technologies que j'utilise</h1>
-        <!--Intégrer ici la partie 2 de l'exercice-->
-    </div>
+            <ul id="filters" class="clearfix row">
+                <li><span class="filter active" data-filter="cat1 cat2 cat3 cat4">Toutes mes catégories</span></li>
+                <li><span class="filter" data-filter="cat1">HTML/CSS</span></li>
+                <li><span class="filter" data-filter="cat2">Javascript</span></li>
+                <li><span class="filter" data-filter="cat3">Bootstrap</span></li>
+                <li><span class="filter" data-filter="cat4">Ruby</span></li>
+            </ul>
+
+            <div class="portfoliolist">
+
+              <div class="portfolio cat2" data-cat="cat2">
+                  <div class="portfolio-wrapper">
+                      <img src="http://placehold.it/125x125" />
+                      <div class="label">
+                          <div class="label-text">
+                              <a class="text-title">Lorem ipsum.</a>
+                              <span class="text-category">Lorem ipsum.</span>
+                          </div>
+                          <div class="label-bg"></div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="portfolio cat1" data-cat="cat1">
+                  <div class="portfolio-wrapper">
+                      <img src="http://placehold.it/125x125" />
+                      <div class="label">
+                          <div class="label-text">
+                              <a class="text-title">Lorem ipsum.</a>
+                              <span class="text-category">Lorem ipsum.</span>
+                          </div>
+                          <div class="label-bg"></div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="portfolio cat3" data-cat="cat3">
+                  <div class="portfolio-wrapper">
+                      <img src="http://placehold.it/125x125" />
+                      <div class="label">
+                          <div class="label-text">
+                              <a class="text-title">Lorem ipsum.</a>
+                              <span class="text-category">Lorem ipsum.</span>
+                          </div>
+                          <div class="label-bg"></div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="portfolio cat4" data-cat="cat4">
+                  <div class="portfolio-wrapper">
+                      <img src="http://placehold.it/125x125" />
+                      <div class="label">
+                          <div class="label-text">
+                              <a class="text-title">Lorem ipsum.</a>
+                              <span class="text-category">Lorem ipsum.</span>
+                          </div>
+                          <div class="label-bg"></div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="portfolio cat4" data-cat="cat4">
+                  <div class="portfolio-wrapper">
+                      <img src="http://placehold.it/125x125" />
+                      <div class="label">
+                          <div class="label-text">
+                              <a class="text-title">Lorem ipsum.</a>
+                              <span class="text-category">Lorem ipsum.</span>
+                          </div>
+                          <div class="label-bg"></div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="portfolio cat2" data-cat="cat2">
+                  <div class="portfolio-wrapper">
+                      <img src="http://placehold.it/125x125" />
+                      <div class="label">
+                          <div class="label-text">
+                              <a class="text-title">Lorem ipsum.</a>
+                              <span class="text-category">Lorem ipsum.</span>
+                          </div>
+                          <div class="label-bg"></div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="portfolio cat3" data-cat="cat3">
+                  <div class="portfolio-wrapper">
+                      <img src="http://placehold.it/125x125" />
+                      <div class="label">
+                          <div class="label-text">
+                              <a class="text-title">Lorem ipsum.</a>
+                              <span class="text-category">Lorem ipsum.</span>
+                          </div>
+                          <div class="label-bg"></div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="portfolio cat4" data-cat="cat4">
+                  <div class="portfolio-wrapper">
+                      <img src="http://placehold.it/125x125" />
+                      <div class="label">
+                          <div class="label-text">
+                              <a class="text-title">Lorem ipsum.</a>
+                              <span class="text-category">Lorem ipsum.</span>
+                          </div>
+                          <div class="label-bg"></div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="portfolio cat4" data-cat="cat4">
+                  <div class="portfolio-wrapper">
+                      <img src="http://placehold.it/125x125" />
+                      <div class="label">
+                          <div class="label-text">
+                              <a class="text-title">Lorem ipsum.</a>
+                              <span class="text-category">Lorem ipsum.</span>
+                          </div>
+                          <div class="label-bg"></div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="portfolio cat1" data-cat="cat1">
+                  <div class="portfolio-wrapper">
+                      <img src="http://placehold.it/125x125" />
+                      <div class="label">
+                          <div class="label-text">
+                              <a class="text-title">Lorem ipsum.</a>
+                              <span class="text-category">Lorem ipsum.</span>
+                          </div>
+                          <div class="label-bg"></div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="portfolio cat1" data-cat="cat1">
+                  <div class="portfolio-wrapper">
+                      <img src="http://placehold.it/125x125" />
+                      <div class="label">
+                          <div class="label-text">
+                              <a class="text-title">Lorem ipsum.</a>
+                              <span class="text-category">Lorem ipsum.</span>
+                          </div>
+                          <div class="label-bg"></div>
+                      </div>
+                  </div>
+              </div>
+
+
+            </div>
+      </div>
     </section>
 
     <section class="jumbotron" id="contact">
@@ -116,6 +316,8 @@
   <script src="js/jquery-3.2.1.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/scrollmovement.js"></script>
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="js/jquery.mixitup.min.js"></script>
 
 
 
