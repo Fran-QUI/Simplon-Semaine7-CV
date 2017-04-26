@@ -2,11 +2,10 @@
   display: flex;
 }
 
+footer{
 
 
-
-
-
+}
 /* Pour test */
 
 html,
@@ -32,7 +31,7 @@ body {
 
 .control {
     position: relative;
-    display: inline-block;
+    display: inline;
     width: 2.7rem;
     height: 2.7rem;
     background: #BBB;
@@ -125,31 +124,12 @@ body {
 
 .mix {
     background: #fff;
-    border-top: .5rem solid currentColor;
-    border-radius: 2px;
-    margin-bottom: 1rem;
     position: relative;
     vertical-align: center;
     text-align: center;
 }
 
-.mix:before {
-    content: '';
-    display: inline-block;
-    padding-top: 56.25%;
-}
 
-.mix.blanc {
-    color: #999999;
-}
-
-.mix.rouge {
-    color: #F50303;
-}
-
-.mix.bleu {
-    color: #0062FF;
-}
 
 /* Grid Breakpoints
 ---------------------------------------------------------------------- */
